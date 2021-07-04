@@ -7,7 +7,6 @@ Lista::Lista(): head_(nullptr), last_(nullptr), length_(0) {
 }
 
 Lista::Lista(const Lista& l) : Lista() {
-    //Inicializa una lista vacía y luego utiliza operator= para no duplicar el código de la copia de una lista.
     *this = l;
 }
 
@@ -79,7 +78,7 @@ void Lista::eliminar(Nat i) {
         }
         else
         {
-            this->last_ = nodo_iesimo->back;
+            last_ = nodo_iesimo->back;
         }
 
         if (nodo_iesimo->back != nullptr)
@@ -88,9 +87,10 @@ void Lista::eliminar(Nat i) {
         }
         else
         {
-            this->head_ = nodo_iesimo->next;
+            head_ = nodo_iesimo->next;
         }
         length_--;
+        nodo_iesimo->data = NULL;
         delete nodo_iesimo;
 }
 
