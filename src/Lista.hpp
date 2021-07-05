@@ -11,8 +11,8 @@ Lista::Lista(const Lista& l) : Lista() {
 }
 
 Lista::~Lista() {
-    for (int i = 0; i < length_; i++) {
-            eliminar(0);
+    while (length_ != 0) {
+        this->eliminar(0);
     }
 }
 
